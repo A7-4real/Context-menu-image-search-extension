@@ -22,5 +22,7 @@
       "matches": ["<all_urls>"],
       "js": ["content-script.js"]
     }
-  ]
+  ],
+
+  "web_accessible_resources": ["http://localhost:3000/"]
 }
