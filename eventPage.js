@@ -20,6 +20,7 @@ chrome.contextMenus.onClicked.addListener(function (clickData) {
       { action: "openSearchResult" },
       function (response) {
         console.log("searchResult overlay opened!");
+        console.log(response);
       }
     );
   });
