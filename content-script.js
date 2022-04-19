@@ -10,14 +10,13 @@ iframe.style.top = "0px";
 iframe.style.right = "0px";
 iframe.style.zIndex = "9000000000000000000";
 // temporary react app as iframe src
-iframe.src = "http://localhost:3000/";
+iframe.src = "";
 // console.log("iframe created", iframe.src);
-
 // append iframe with 0 width
 document.body.appendChild(iframe);
 console.log("iframe appended to current page", iframe);
 
-// change width of iframe to 400px
+// change width of iframe to 370px
 function toggle() {
   // predefined iframe width
   let iframeWidth = 370;
@@ -34,10 +33,12 @@ function toggle() {
     iframe.style.width = "0px";
   }
 }
-
 chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
   if (msg.action == "openSearchResult") {
     console.log("Message recieved", msg.action);
+    var image_url = msg.srcUrl;
+    // changing iframe src to our react app which will fetch result from our backend using react router (URL parameters)
+    iframe.src = "http://localhost:3000/image_url";
     toggle();
     console.log("toggled function called");
   }
