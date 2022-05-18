@@ -38,7 +38,7 @@ chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
     console.log("Message recieved", msg.action);
     var image_url = msg.srcUrl;
     // changing iframe src to our react app which will fetch result from our backend using react router (URL parameters)
-    iframe.src = "http://localhost:3000/image_url";
+    iframe.src = "http://localhost:3000/" + image_url;
     toggle();
     console.log("toggled function called");
   }
